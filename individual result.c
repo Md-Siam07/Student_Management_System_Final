@@ -4,7 +4,7 @@
 void individual_result(){
 
 FILE *fp;
-int x,y, i, j, k, roll,m;
+int x,y, i, j, k, roll,m,n;
 double cgp,cg,mark[6];
 printf("\nEnter Roll: ");
 scanf("%d", &x);
@@ -48,7 +48,10 @@ for(i=0; i<2; i++){
         }
         printf("\n\n\tFinal CGPA: %.2lf\n\tLetter grade: ",cgp/y);
         grade(cgp/y);
-        return 0;
+        printf("\npress 0 to return to menu");
+        scanf("%d",&n);
+        if(n==0)
+        menu();
     }
     else {
         for(j=0; j<y; j++){
@@ -75,6 +78,12 @@ printf("\n\nRESULT NOT FOUND!!!");
 
 
 fclose(fp);
+printf("\nPress 0 to return to menu (anything else to exit)");
+scanf("%d",&n);
+if(n==0){
+    menu();
+}
+else return 0;
 
 
 }
